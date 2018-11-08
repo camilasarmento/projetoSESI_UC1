@@ -1,0 +1,95 @@
+<style>
+ .draggable { width:100px; height:100px; padding:0.5em; float:left; margin:10px 10px 10px 0; }
+ #droppable { width:150px; height:150px; padding:0.5em; float:left; margin:10px; }
+ #resizable { width:150px; height:150px; padding:0.5em; margin-bottom:15px; }
+ #resizable h3 { text-align: center; margin: 0; }
+ ol#selectable .ui-selecting { background: #FECA40; }
+ ol#selectable .ui-selected { background: #F39814; color: white; }
+ ol#selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+ ol#selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+ #sortable { list-style-type: none; margin:0 0 15px 0; padding: 0; width: 60%; }
+ #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+ #sortable li span { position: absolute; margin-left: -1.3em; }
+ #progressbarWrapper { height:30px; margin-bottom:15px; }
+ #slider { margin-bottom:15px; }
+</style>
+<h1>Drag & Drop do jQuery UI com Touch Events (Para mobile)</h1>
+<section class="tabs">
+  <nav>
+    <ul>
+      <li><a href="#tab-a1">Draggable</a></li>
+      <li><a href="#tab-a2">Droppable</a></li>
+      <li><a href="#tab-a3">Resizable</a></li>
+      <li><a href="#tab-a4">Selectable</a></li>
+      <li><a href="#tab-a5">Sortable</a></li>
+      <li><a href="#tab-a6">Progressbar</a></li>
+      <li><a href="#tab-a7">Slider</a></li>
+    </ul>
+  </nav>
+  <div class="content-tabs">
+    <section id="tab-a1">
+      <div class="draggable ui-widget-content">
+        <p>Drag me around</p>
+      </div>
+    </section>
+    <section id="tab-a2">
+      <div class="draggable ui-widget-content">
+        <p>Drag me to my target</p>
+      </div>
+      <div id="droppable" class="ui-widget-header">
+        <p>Drop here</p>
+      </div>
+    </section>
+    <section id="tab-a3">
+      <div id="resizable" class="ui-widget-content">
+        <h3 class="ui-widget-header">Resizable</h3>
+      </div>
+    </section>
+    <section id="tab-a4">
+      <ol id="selectable">
+        <li class="ui-widget-content">Item 1</li>
+        <li class="ui-widget-content">Item 2</li>
+        <li class="ui-widget-content">Item 3</li>
+        <li class="ui-widget-content">Item 4</li>
+        <li class="ui-widget-content">Item 5</li>
+        <li class="ui-widget-content">Item 6</li>
+        <li class="ui-widget-content">Item 7</li>
+      </ol>
+    </section>
+    <section id="tab-a5">
+      <ul id="sortable">
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+      </ul>
+    </section>
+    <section id="tab-a6">
+      <div id="progressbarWrapper" class="ui-widget-default">
+        <div id="progressbar" style="height:100%"></div>
+      </div>
+    </section>
+    <section id="tab-a7">
+      <div id="slider"></div>
+    </section>
+  </div>
+</section>
+
+<script>
+ $('.draggable').draggable();
+ $('#droppable').droppable({
+  drop:function(ev,ui) {
+   $(this).addClass('ui-state-highlight').find('p').html('Dropped!');
+  }
+ });
+ $('#resizable').resizable();
+ $('#selectable').selectable();
+ $('#sortable').sortable();
+ $('#sortable').disableSelection();
+ $('#progressbar').progressbar({ value:37 });
+ $('#progressbarWrapper').resizable();
+ $('#slider').slider();
+</script>

@@ -1,0 +1,53 @@
+<div id="capa"><img src="imgs/capa.png"></div>
+<div style="position:absolute;top:0px">
+  <h2 style="display:inline">Selecionar skin:</h2>
+  <select id="sel_skin" onchange="change_skin()">
+    <option>Selecione</option>
+    <option>Cor Marrom / Cinza</option>
+    <option>Cor Marrom</option>
+    <option>Cor Verde / Cinza</option>
+    <option>Cor Verde</option>
+    <option>Cor Laranja / Cinza</option>
+  </select>
+</div>
+<script>
+var skinsVet=[
+ { // Marrom / Cinza
+  'bgMain':'#724336','txtMain':'#fff','bgRealce':'#985947','txtRealce':'#fff',
+  'bgAtivo':'#c79687','txtAtivo':'#fff','bgMenuOff':'#ececec','txtMenuOff':'#000',
+  'bgMenuOn':'#f8c301','txtMenuOn':'#000','bgMenuMarcadorVisitado':'#78a1bb',
+  'bgDestaque':'#feebb2','txtDestaque':'#000','titDestaque':'#724336'
+ },{ // Marrom
+  'bgMain':'#724336','txtMain':'#fff','bgRealce':'#985947','txtRealce':'#fff',
+  'bgAtivo':'#c79687','txtAtivo':'#fff','bgMenuOff':'#985947','txtMenuOff':'#fff',
+  'bgMenuOn':'#c79687','txtMenuOn':'#fff','bgMenuMarcadorVisitado':'#f8c301',
+  'bgDestaque':'#feebb2','txtDestaque':'#000','titDestaque':'#724336'
+ },{ // Verde / Cinza
+  'bgMain':'#00422c','txtMain':'#fff','bgRealce':'#22644e','txtRealce':'#fff',
+  'bgAtivo':'#44866f','txtAtivo':'#fff','bgMenuOff':'#ececec','txtMenuOff':'#000',
+  'bgMenuOn':'#f8c301','txtMenuOn':'#000','bgMenuMarcadorVisitado':'#78a1bb',
+  'bgDestaque':'#feebb2','txtDestaque':'#000','titDestaque':'#00422c'
+ },{ // Verde
+  'bgMain':'#00422c','txtMain':'#fff','bgRealce':'#22644e','txtRealce':'#fff',
+  'bgAtivo':'#44866f','txtAtivo':'#fff','bgMenuOff':'#22644e','txtMenuOff':'#fff',
+  'bgMenuOn':'#44866f','txtMenuOn':'#fff','bgMenuMarcadorVisitado':'#f8c301',
+  'bgDestaque':'#feebb2','txtDestaque':'#000','titDestaque':'#00422c'
+ },{ // Laranja / Cinza
+  'bgMain':'#df4c18','txtMain':'#fff','bgRealce':'#ec8560','txtRealce':'#fff',
+  'bgAtivo':'#f3c1b0','txtAtivo':'#df4c18','bgMenuOff':'#ececec','txtMenuOff':'#000',
+  'bgMenuOn':'#f8c301','txtMenuOn':'#000','bgMenuMarcadorVisitado':'#78a1bb',
+  'bgDestaque':'#feebb2','txtDestaque':'#000','titDestaque':'#df4c18'
+ }
+];
+
+function change_skin() {
+  var sel=document.getElementById('sel_skin');
+  if(sel.selectedIndex>0) {
+    skinVet=skinsVet[sel.selectedIndex-1];
+    set_page_skin();
+    sel.selectedIndex=0;
+  }
+}
+</script>
+
+<p> qualquer coisa </p>

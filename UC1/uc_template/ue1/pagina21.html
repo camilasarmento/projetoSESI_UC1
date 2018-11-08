@@ -1,0 +1,25 @@
+<h1>INTEGRA&Ccedil;&Atilde;O SCORM / UNITY INLINE</h1>
+<p>Este simulador inline salva o desempenho no SCORM.</p>
+<div class="unity_obj" id="simul_exemplo_cs" style="width:550px;height:413px">anim/simul_exemplo_cs.unity3d</div>
+
+<h1 style="margin:30px 0px 10px 0px">INTEGRA&Ccedil;&Atilde;O SCORM / HTML INLINE</h1>
+<div id="scorm_ativ_ativ_exemplo_html_no_report" title="Exemplo 3: Integra&ccedil;&atilde;o Scorm / HTML inline" data-report="false">
+  <label for="tf_score">Score:</label>
+  <input type="text" name="tf_score" id="tf_score" size="5" maxlength="5" value="90.00">
+  <button type="button" onclick="salva()">salvar no scorm</button>
+  <div style="margin-top:12px">OBS: A atividade inline n&atilde;o obriga o uso desta caixa de chamada.</div>
+</div>
+
+<script>
+function salva() {
+  var vet={ id:'ativ_exemplo_html_no_report', commit:true,
+   score:parseFloat(document.getElementById('tf_score').value) };
+  if(!scorm_ativ_salva(vet)) overlay('Erro','Erro ao salvar a Tarefa');
+  else {
+    scorm_ativ_reload_desemp(document.getElementById('scorm_sinal_ativ_exemplo_html_no_report'));
+    overlay('Desempenho Salvo com sucesso (sem relat&oacute;rio):',
+      '* Dura&ccedil;&atilde;o: '+vet['session_time']+'<br>\n'
+     +'* Nota: '+vet['score'].toFixed(2));
+  }
+}
+</script>
