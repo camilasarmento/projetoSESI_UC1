@@ -102,8 +102,7 @@ function set_html_page(tit_curso) {
   limite = $("a[href^='javascript:go(']").length;
   atualizaVisitados(0);
   load_js_file('../../lib/mtree.js',true,function() {
-   $('#menu').perfectScrollbar({ wheelSpeed:5, wheelPropagation:false,
-    suppressScrollX:true });
+   
    for(x=1; x<=limite;x++) { // trocaBgLink
      if(visitados.charAt(x)=='1')
        $('a[href="javascript:go('+x+')"]').addClass('visitado');

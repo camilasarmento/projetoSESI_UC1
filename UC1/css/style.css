@@ -11,10 +11,11 @@ body {
  clear:both;
  width:100%;
  height:100%;
- overflow:hidden;
+ overflow: hidden;/*TESTE*/
  background-color:#fff;
 }
 *:fullscreen, *:-webkit-full-screen, *:-moz-full-screen, *:-ms-fullscreen {
+ background-color: WHITE;
  position:absolute;
  left:0px;
  top:0px;
@@ -36,10 +37,17 @@ body {
  -o-box-sizing:border-box;
 }
 #content {
- position:relative;
- float:left;
+ 
+/*BAADY ONDE APARECE TODO CONTEUDO*/
+ 
+/* overflow-x: visible;/*overfloww do conteudo*/
+   
+ background-color: WHITE;   
  min-height:330px;
- min-width:200px;
+ min-width: 200px;
+ position:relative;
+ 
+ float:left;
  left:240px;
  margin:10px 0px 0px 0px;
  z-index:3000;
@@ -58,25 +66,22 @@ body {
  background-repeat:no-repeat;
 }
 #conteudo {
+ overflow-x:hidden;  
  position:relative;
- margin:15px 30px 0px 40px;
+ margin:15px 50px 0px 40px;
  padding:0px;
- overflow:hidden;
+ 
  z-index:1;
  -webkit-transition:all 400ms ease-out;
  -moz-transition:all 400ms ease-out;
  -ms-transition:all 400ms ease-out;
  -o-transition:all 400ms ease-out;
  transition:all 400ms ease-out;
+ 
 }
-#conteudoScroll {
- position:relative;
- margin:0px auto;
- padding:0px 20px 0px 0px;
- width:97%;
- height:100%;
- overflow:hidden;
-}
+
+
+
 .setaLeft, .setaRight {
  position:absolute;
  top:48%;
@@ -104,6 +109,7 @@ body {
  z-index:6000;
 }
 #topo span {
+    
  border-left:1px solid #999999;
  font-size:18px;
  margin-left:140px;
@@ -136,30 +142,37 @@ body {
  display:inline;
 }
 #contadorTela {
+
  margin:0px 47%;
  width:60px;
  z-index:7001;
 }
+
 #painelDeControle { z-index:7000; }
 #home, #ajuda {
  opacity:0.5;
- position:absolute;
+ position:fixed;
  cursor:pointer;
 }
 #home { margin:3px 0px 0px 13px; }
 #ajuda { margin:0px 0px 0px 30px; }
 /* Menu de conteúdo */
 #menu {
+    
+    
+    /*MENUUUUUUU*/
+ height: 96.5%;
+ overflow: hidden; /*overflow correto do menu*/
  float:left;
  position:absolute;
  margin:10px 0px 0px 0px;
  width:230px;
- min-height:330px;
+
  box-shadow:0px 0px 1em #333;
  -webkit-box-shadow:0px 0px 1em #333;
  -moz-box-shadow:0px 0px 1em #333;
  z-index:5000;
- overflow:hidden;
+ 
 }
 #menu h2 {
  margin:0px;
@@ -245,3 +258,41 @@ body.altoContraste ul.mtree li > a.visitado:hover::before,
 body.altoContraste ul.mtree li.mtree-active > a.visitado::before {
  color:#222222;
 }
+
+#menu:hover{
+    overflow: auto; /*aqui faz o menu aparecer qnd passar mouse por cima*/
+    
+}
+
+.visivel::-webkit-scrollbar {
+	width: 7px;  
+    background-color: #eee;
+}
+
+.visivel::-webkit-scrollbar-thumb {
+	background:#aaa;
+	border-radius: 4px;
+    
+}
+
+#conteudo::-webkit-scrollbar {
+	width: 7px;
+}
+
+#conteudo::-webkit-scrollbar-thumb {
+	background: #aaa;
+	border-radius: 4px;
+   
+}
+#conteudo::-webkit-scrollbar{
+    margin-right: 150px;
+}
+
+
+
+
+
+
+
+
+
