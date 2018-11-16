@@ -395,7 +395,7 @@ div.capty-caption div {
 .zoom img::selection { background-color: transparent; }
 /* flipbook */
 .magazine {
- width:600px;
+ width:90%;
  height:400px;
  margin:0px auto;
  box-shadow:4px 7px 1em #C6C6C6;
