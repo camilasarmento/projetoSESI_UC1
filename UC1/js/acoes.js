@@ -99,7 +99,7 @@ function set_html_page(tit_curso) {
    +'<\/section>\n'
    +'<section id="contadorTela">0/0<\/section>\n';
   AddEvent(document,'keydown',applyKey);
-  limite = $("a[href^='javascript:go(']").length;
+  limite = 50;
   atualizaVisitados(0);
   load_js_file('../../lib/mtree.js',true,function() {
    
